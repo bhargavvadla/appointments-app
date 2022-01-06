@@ -1,0 +1,75 @@
+body {
+  font-family: 'Roboto';
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+.appointment-list-item {
+  border-radius: 10px;
+  border: 2px solid #b5b7c4;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .appointment-list-item {
+    width: 30%;
+    margin-right: 25px;
+  }
+}
+.appointment-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #171f46;
+}
+
+@media screen and (min-width: 768px) {
+  .appointment-title {
+    font-size: 18px;
+  }
+}
+.appointment-time {
+  font-size: 12px;
+  color: #171f46;
+  margin-top: 10px;
+}
+@media screen and (width: 768px) {
+  .appointment-time {
+    font-size: 18px;
+  }
+}
+.start-icon {
+  height: 20px;
+  width: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .start-icon {
+    height: 25px;
+    width: 25px;
+  }
+}
+.start-btn {
+  width: 40px;
+  height: 40px;
+  background: none;
+  outline: none;
+  border-width: 0;
+  cursor: pointer;
+  align-self: center;
+}
+
+/*
+Hex: #9796f0
+Hex: #fbc7d4
+Hex: #ffffff
+Hex: #171f46
+Hex: #8b5cf6
+Hex: #b5b7c4
+Hex: #9897f0
+*/
