@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/appointments-app/static/css/main.5945afb8.chunk.css",
+    "main.js": "/appointments-app/static/js/main.a5846cdb.chunk.js",
+    "main.js.map": "/appointments-app/static/js/main.a5846cdb.chunk.js.map",
+    "runtime-main.js": "/appointments-app/static/js/runtime-main.481d6838.js",
+    "runtime-main.js.map": "/appointments-app/static/js/runtime-main.481d6838.js.map",
+    "static/js/2.2556f5e5.chunk.js": "/appointments-app/static/js/2.2556f5e5.chunk.js",
+    "static/js/2.2556f5e5.chunk.js.map": "/appointments-app/static/js/2.2556f5e5.chunk.js.map",
+    "index.html": "/appointments-app/index.html",
+    "static/css/main.5945afb8.chunk.css.map": "/appointments-app/static/css/main.5945afb8.chunk.css.map",
+    "static/js/2.2556f5e5.chunk.js.LICENSE.txt": "/appointments-app/static/js/2.2556f5e5.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.481d6838.js",
+    "static/js/2.2556f5e5.chunk.js",
+    "static/css/main.5945afb8.chunk.css",
+    "static/js/main.a5846cdb.chunk.js"
+  ]
+}
