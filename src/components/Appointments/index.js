@@ -73,10 +73,8 @@ class Appointments extends Component {
 
   render() {
     const {titleInput, dateInput, hasStarredList} = this.state
-    // console.log(this.state)
     const startBtnClass = hasStarredList ? 'star-filled' : 'star-empty'
     const appointmentItems = this.getStaredItems()
-    console.log(appointmentItems)
 
     return (
       <div className="app-container">
@@ -101,10 +99,10 @@ class Appointments extends Component {
                 </label>
                 <input
                   id="date"
-                  type="date"
                   className="input"
-                  onChange={this.onChangeDate}
+                  type="date"
                   value={dateInput}
+                  onChange={this.onChangeDate}
                 />
                 <div>
                   <button

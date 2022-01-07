@@ -29,5 +29,4 @@ const AppointmentItem = props => {
   )
 }
 
-// https://assets.ccbp.in/frontend/react-js/appointments-app/filled-star-img.png
 export default AppointmentItem
