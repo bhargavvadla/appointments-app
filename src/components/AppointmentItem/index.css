@@ -15,6 +15,11 @@ p {
   width: 100%;
   margin-top: 20px;
 }
+.list-text-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
 
 @media screen and (min-width: 768px) {
   .appointment-list-item {

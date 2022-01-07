@@ -12,10 +12,6 @@ class Appointments extends Component {
     hasStarredList: false,
   }
 
-  getStarred = () => {
-    this.setState(prevState => ({hasStarredList: !prevState.hasStarredList}))
-  }
-
   onChangeTitle = e => {
     this.setState({
       titleInput: e.target.value,
@@ -24,6 +20,10 @@ class Appointments extends Component {
 
   onChangeDate = e => {
     this.setState({dateInput: e.target.value})
+  }
+
+  onChangeStar = () => {
+    this.setState(prevState => ({hasStarredList: !prevState.hasStarredList}))
   }
 
   addAppointment = e => {
@@ -47,6 +47,16 @@ class Appointments extends Component {
     }))
   }
 
+  getStaredItems = () => {
+    const {appointments, hasStarredList} = this.state
+    if (hasStarredList) {
+      return appointments.filter(
+        eachTransaction => eachTransaction.isStarred === true,
+      )
+    }
+    return appointments
+  }
+
   onClickStar = id => {
     this.setState(prevState => ({
       appointments: prevState.appointments.map(eachAppointment => {
@@ -56,15 +66,17 @@ class Appointments extends Component {
             isStarred: !eachAppointment.isStarred,
           }
         }
-        console.log(eachAppointment)
         return eachAppointment
       }),
     }))
   }
 
   render() {
-    const {titleInput, dateInput, appointments, hasStarredList} = this.state
+    const {titleInput, dateInput, hasStarredList} = this.state
+    // console.log(this.state)
     const startBtnClass = hasStarredList ? 'star-filled' : 'star-empty'
+    const appointmentItems = this.getStaredItems()
+    console.log(appointmentItems)
 
     return (
       <div className="app-container">
@@ -115,31 +127,24 @@ class Appointments extends Component {
               <h1 className="menu-heading">Appointments</h1>
               <button
                 className={`get-starred-btn ${startBtnClass}`}
-                type="submit"
-                onClick={this.getStarred}
+                type="button"
+                onClick={this.onChangeStar}
               >
                 Starred
               </button>
             </div>
             <ul className="appointment-menu">
-              {hasStarredList
-                ? appointments.map(
-                    eachAppointment =>
-                      eachAppointment.isStarred && (
-                        <AppointmentItem
-                          updateStarred={this.onClickStar}
-                          appointmentListItem={eachAppointment}
-                          key={eachAppointment.id}
-                        />
-                      ),
-                  )
-                : appointments.map(eachAppointment => (
-                    <AppointmentItem
-                      updateStarred={this.onClickStar}
-                      appointmentListItem={eachAppointment}
-                      key={eachAppointment.id}
-                    />
-                  ))}
+              {hasStarredList && appointmentItems.length === 0 ? (
+                <p className="msg-text">There are no Starred Appointments</p>
+              ) : (
+                appointmentItems.map(eachAppointment => (
+                  <AppointmentItem
+                    updateStarred={this.onClickStar}
+                    appointmentListItem={eachAppointment}
+                    key={eachAppointment.id}
+                  />
+                ))
+              )}
             </ul>
           </div>
         </div>
